@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Travel recommendation</title>
+    <style>
+        body{
+            color: white;
+            text-align: center;
+            background: url(https://teletype.in/files/6c/cb/6ccbcd03-f09e-4cdc-ac5c-161ecaae0b7b.jpeg);
+        }
+        button {
+          padding: 10px 20px;
+          background-color: #3a6665;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #357371;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align:left;
+            margin-right:20;
+        }
+        p {
+            font-size: 1.2rem;
+            text-align: left;
+            margin: 20, 20; 
+        }
+        div.description {
+            text-align: left; 
+            margin-left: 50%;
+            width: 40%;
+            font-size: 1.3rem;
+            font-weight: 550;
+        }
+        nav.navigation ul {
+            list-style-type: none;
+        }
+        nav.navigation ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav.navigation a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 8px;
+            background-color: transparent !important;
+        }
+      </style>
+</head>
+<body>
+    <nav class="navigation">
+        <nav><h1>TravelBloom</h1>
+        <ul>
+            <li><a href="./travel_recommendation.html" id="home">Home </a></li>
+            <li><a href="./about_us.html" id="contact">About us </a></li>
+            <li><a href="./contact_us.html" id="contact">Contact Us </a></li>
+        </ul>
+    </nav>
+        <h2>CONTACT US</h2>
+        <p>Get in touch</p>
+        <div class="description">
+            <form id="contactForm">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" onclick="thankyou()">Submit</button>
+            </form>
+        </div>
+        <script>
+            function thankyou(){
+                alert('Thank you for contacting us!')
+            }
+        </script>
+</body>

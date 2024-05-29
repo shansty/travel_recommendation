@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Travel recommendation</title>
+    <style>
+        body{
+            color: white;
+            text-align: center;
+            background: url(https://teletype.in/files/6c/cb/6ccbcd03-f09e-4cdc-ac5c-161ecaae0b7b.jpeg);
+        }
+        button {
+          padding: 10px 20px;
+          background-color: #3a6665;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #357371;
+        }
+        h2 {
+            font-weight: bold;
+            font-size: 2.7rem;
+        }
+        .descriprion {
+            text-align: left; 
+            margin-left: 30px;
+            width: 40%;
+            font-size: 1.3rem;
+            font-weight: 550;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+      </style>
+</head>
+<body>
+    <nav><h1>TravelBloom</h1>
+        <ul>
+            <li><a href="./travel_recommendation.html" id="home">Home </a></li>
+            <li><a href="./about_us.html" id="contact">About us </a></li>
+            <li><a href="./contact_us.html" id="contact">Contact Us </a></li>
+            <li><input type="text" id="conditionInput" placeholder="Enter a destination or keyword">  </li>
+            <li><button id='btnSearch'>Search</button></li>
+            <li><button id='btnReset'>Clear</button></li> 
+        </ul>
+    </nav>
+    <div class="descriprion">
+        <h2>EXPLORE DREAM DESTINATION</h2>
+        <p>Explore our comprehensive travel guide packed with expert tips and recommendations to enhance your next adventure. Discover hidden gems, plan your itinerary, and make the most of your travels with insights on accommodations, attractions, local cuisine, and more. Let our travel tips inspire unforgettable journeys and unforgettable memories</p>
+    </div>
+    <div class="searchCondition">
+        <div id="result"></div>
+    </div>
+    <script src="./travel_recommendation.js"></script>
+</body>
