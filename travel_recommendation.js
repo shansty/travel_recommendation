@@ -23,7 +23,7 @@ function searchResult() {
                 resultDiv.innerHTML += `<p> ${temple.description}</p>`;
             })
         } else if(user_search == 'country') {
-            const randomNumber = getRandomNumber(1, 3);
+            const randomNumber = getRandomNumber(0, 2);
             data.countries[randomNumber].cities.forEach(city => {
                 resultDiv.innerHTML += `<h2>${city.name} </h2>`;
                 resultDiv.innerHTML += `<img src="${city.imageUrl}">`;
