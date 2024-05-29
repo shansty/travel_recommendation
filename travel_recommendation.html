@@ -41,6 +41,14 @@
             color: white;
             font-weight: bold;
         }
+        div.searchCondition {
+            display: flex;
+        justify-content: flex-end;
+        }
+        img {
+            width: 500px; 
+            height: 500px; 
+            margin: 5px 5px;
       </style>
 </head>
 <body>
@@ -49,7 +57,7 @@
             <li><a href="./travel_recommendation.html" id="home">Home </a></li>
             <li><a href="./about_us.html" id="contact">About us </a></li>
             <li><a href="./contact_us.html" id="contact">Contact Us </a></li>
-            <li><input type="text" id="conditionInput" placeholder="Enter a destination or keyword">  </li>
+            <li><input type="text" id="searchResult" placeholder="Enter a destination or keyword">  </li>
             <li><button id='btnSearch'>Search</button></li>
             <li><button id='btnReset'>Clear</button></li> 
         </ul>

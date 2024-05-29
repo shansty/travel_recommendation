@@ -1,43 +1,52 @@
-const user_search = document.getElementById("btnSearch").value.toLowerCase();4
 const btnSearch = document.getElementById("btnSearch");
 const btnClear = document.getElementById("btnReset");
 
 function searchResult() {
-const resultDiv = document.getElementById('result');
+    const user_search = document.getElementById("searchResult").value.toLowerCase();
+    const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
-    fetch('travel_recommendation.json')
+    fetch('travel_recommendation_api.json')
       .then(response => response.json())
       .then(data => {
+        console.dir({data, user_search})
         if (user_search == 'beach') {
             data.beaches.forEach(beach => {
+                console.dir({beach})
                 resultDiv.innerHTML += `<h2>${beach.name}</h2>`;
-                resultDiv.innerHTML += `<img src="${beach.imageUrl}" alt="hjh">`;
+                resultDiv.innerHTML += `<img src="${beach.imageUrl}">`;
                 resultDiv.innerHTML += `<p> ${beach.description}</p>`;
             });
           } else if (user_search == 'temple'){
             data.temples.forEach(temple => {
                 resultDiv.innerHTML += `<h2>${temple.name}</h2>`;
-                resultDiv.innerHTML += `<img src="${temple.imageUrl}" alt="hjh">`;
+                resultDiv.innerHTML += `<img src="${temple.imageUrl}">`;
                 resultDiv.innerHTML += `<p> ${temple.description}</p>`;
             })
         } else if(user_search == 'country') {
-            data.countries.forEach(country => {
-                resultDiv.innerHTML += `<h2>${country.name}</h2>`;
-                resultDiv.innerHTML += `<img src="${country.imageUrl}" alt="hjh">`;
-                resultDiv.innerHTML += `<p> ${country.description}</p>`;
+            const randomNumber = getRandomNumber(1, 3);
+            data.countries[randomNumber].cities.forEach(city => {
+                resultDiv.innerHTML += `<h2>${city.name} </h2>`;
+                resultDiv.innerHTML += `<img src="${city.imageUrl}">`;
+                resultDiv.innerHTML += `<p> ${city.description}</p>`;
             })
         } else {
             console.log("Error input")
         }
       })
       .catch(error => {
-        console.error('Error:', error);
+        console.error(error);
         resultDiv.innerHTML = 'An error occurred while fetching data.';
       });
 }
 
 function resetSearch() {
-    document.getElementById("btnSearch").value = "";
+    document.getElementById("searchResult").value = "";
+    document.getElementById('result').innerHTML = "";
+    console.log(resultDiv)
+}
+
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 btnSearch.addEventListener('click', searchResult);
